@@ -128,7 +128,7 @@ public class InstallationsViewModelTests
             InstallationId = "device-001",
             Platform = "Apns",
             PushChannel = "apns-token",
-            Tags = new Dictionary<string, string> { ["userId"] = "userId" }
+            Tags = new Dictionary<string, string> { ["userId"] = "user-123" }
         };
 
         _mockService

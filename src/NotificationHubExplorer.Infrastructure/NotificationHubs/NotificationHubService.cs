@@ -59,8 +59,9 @@ public sealed class NotificationHubService : INotificationHubService
             Platform = installation.Platform.ToString(),
             PushChannel = installation.PushChannel,
             ExpirationTime = installation.ExpirationTime,
-            // The SDK exposes tags as IList<string> (e.g., "userId:123").
-            // We map each tag string to itself so callers receive a consistent dictionary.
+            // The SDK exposes tags as IList<string> where each entry is the full tag string
+            // (e.g., "userId:123"). Map each tag to itself so callers receive a consistent
+            // dictionary; callers may parse the values further as needed.
             Tags = installation.Tags?.ToDictionary(t => t, t => t) ?? new Dictionary<string, string>(),
             Templates = installation.Templates?.ToDictionary(
                 kvp => kvp.Key,

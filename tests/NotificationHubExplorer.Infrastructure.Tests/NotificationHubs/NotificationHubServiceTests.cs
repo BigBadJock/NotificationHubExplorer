@@ -68,7 +68,7 @@ public class NotificationHubServiceTests
             InstallationId = "device-abc",
             Platform = "Apns",
             PushChannel = "push-token-xyz",
-            Tags = new Dictionary<string, string> { ["env"] = "env" }
+            Tags = new Dictionary<string, string> { ["env"] = "production" }
         };
 
         _mockService
